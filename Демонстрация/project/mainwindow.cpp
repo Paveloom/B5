@@ -10,11 +10,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QSettings settings(ORGANIZATION_NAME, APPLICATION_NAME);
 
-    ui->checkBox->setChecked(settings.value(SETTINGS_BUTTON_1, false).toBool());
-    ui->checkBox_2->setChecked(settings.value(SETTINGS_BUTTON_2, false).toBool());
+    ui->checkBox->setChecked(settings.value(SETTINGS_CHECKBOX_1, false).toBool());
+    ui->checkBox_2->setChecked(settings.value(SETTINGS_CHECKBOX_2, false).toBool());
 
-    ui->lineEdit->setText(settings.value(SETTINGS_TEXT, "").toString());
-    ui->lineEdit->setValidator( new QIntValidator(this));
+    ui->checkBox_2->setEnabled(settings.value(SETTINGS_CHECKBOX_2_ENABLED, ui->checkBox->isChecked()).toBool());
+
+    ui->lineEdit_1->setText(settings.value(SETTINGS_LINEEDIT_1, "").toString());
+    ui->lineEdit_1->setValidator( new QIntValidator(this) );
 
 }
 
@@ -28,18 +30,18 @@ void MainWindow::on_saveButton_clicked()
     QSettings settings(ORGANIZATION_NAME, APPLICATION_NAME);
 
     if(ui->checkBox->isChecked()){
-        settings.setValue(SETTINGS_BUTTON_1, true);
+        settings.setValue(SETTINGS_CHECKBOX_1, true);
     } else {
-        settings.setValue(SETTINGS_BUTTON_1, false);
+        settings.setValue(SETTINGS_CHECKBOX_1, false);
     }
 
     if(ui->checkBox_2->isChecked()){
-        settings.setValue(SETTINGS_BUTTON_2, true);
+        settings.setValue(SETTINGS_CHECKBOX_2, true);
     } else {
-        settings.setValue(SETTINGS_BUTTON_2, false);
+        settings.setValue(SETTINGS_CHECKBOX_2, false);
     }
 
-    settings.setValue(SETTINGS_TEXT, ui->lineEdit->text());
+    settings.setValue(SETTINGS_LINEEDIT_1, ui->lineEdit_1->text());
 
     settings.sync();
 
@@ -49,7 +51,20 @@ void MainWindow::on_saveButton_clicked()
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream stream(&file);
 
-        stream << QString(ui->lineEdit->text()) << endl;
+        stream << QString(ui->lineEdit_1->text()) << endl;
 
     file.close();
+}
+
+void MainWindow::on_checkBox_stateChanged()
+{
+    QSettings settings(ORGANIZATION_NAME, APPLICATION_NAME);
+
+    if(ui->checkBox->isChecked()){
+        ui->checkBox_2->setEnabled(true);
+        settings.setValue(SETTINGS_CHECKBOX_2_ENABLED, true);
+    } else {
+        ui->checkBox_2->setEnabled(false);
+        settings.setValue(SETTINGS_CHECKBOX_2_ENABLED, false);
+    }
 }

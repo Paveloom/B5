@@ -15,9 +15,10 @@
 #define ORGANIZATION_DOMAIN "http://paveloom.tk"
 #define APPLICATION_NAME "Demonstration"
 
-#define SETTINGS_BUTTON_1 "settings/button_1"
-#define SETTINGS_BUTTON_2 "settings/button_2"
-#define SETTINGS_TEXT "setting/text"
+#define SETTINGS_LINEEDIT_1 "setting/lineedit_1"
+#define SETTINGS_CHECKBOX_1 "settings/checkbox_1"
+#define SETTINGS_CHECKBOX_2 "settings/checkbox_2"
+#define SETTINGS_CHECKBOX_2_ENABLED "settings/checkbox_2_enabled"
 
 #define FILENAME "settings"
 
@@ -35,6 +36,7 @@ public:
 
 private slots:
     void on_saveButton_clicked();
+    void on_checkBox_stateChanged();
 
 private:
     Ui::MainWindow * ui;

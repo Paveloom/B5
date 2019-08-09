@@ -33,7 +33,7 @@ public:
     QPushButton *saveButton;
     QCheckBox *checkBox_2;
     QCheckBox *checkBox;
-    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_1;
     QLabel *label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -56,10 +56,10 @@ public:
         checkBox = new QCheckBox(centralWidget);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(30, 80, 291, 20));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(30, 50, 113, 22));
-        lineEdit->setInputMethodHints(Qt::ImhNone);
+        lineEdit_1 = new QLineEdit(centralWidget);
+        lineEdit_1->setObjectName(QStringLiteral("lineEdit_1"));
+        lineEdit_1->setGeometry(QRect(30, 50, 113, 22));
+        lineEdit_1->setInputMethodHints(Qt::ImhNone);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 30, 251, 16));
