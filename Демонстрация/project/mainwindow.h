@@ -13,7 +13,7 @@
 /* Defining */
 #define ORGANIZATION_NAME "paveloom"
 #define ORGANIZATION_DOMAIN "http://paveloom.tk"
-#define APPLICATION_NAME "Demonstration"
+#define APPLICATION_NAME "Демонстрация"
 
 #define SETTINGS_LINEEDIT_1 "setting/lineedit_1"
 

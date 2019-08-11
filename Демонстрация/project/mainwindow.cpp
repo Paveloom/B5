@@ -82,7 +82,58 @@ void MainWindow::on_saveButton_clicked()
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream stream(&file);
 
-        stream << QString(ui->lineEdit_1->text()) << endl;
+    stream << QString("   1. Размер выборки (обязательно)") << endl;
+    stream << QString("\n   " + ui->lineEdit_1->text()) + "\n" << endl;
+
+    stream << QString("   2. Использовать массив исключений? (.true. - да, .false. - нет) (обязательно)") << endl;
+
+    if (ui->checkBox->isChecked()) {
+        stream << QString("\n   .true.\n") << endl;
+    } else {
+        stream << QString("\n   .false.\n") << endl;
+    }
+
+    stream << QString("   3. Заполнять массив исключений вручную (указание в процедуре F0 в коде модуля\n"
+                      "   программы) или искать значения индексов исключений программно (может замедлить программу)?\n"
+                      "   (.true. - первое, .false. - второе) (обязательно, если П2 (значение параметра 2) = 0)") << endl;
+
+    if (ui->checkBox_2->isChecked()) {
+        stream << QString("\n   .true.\n") << endl;
+    } else {
+        stream << QString("\n   .false.\n") << endl;
+    }
+
+    stream << QString("   4. Число исключений (обязательно, если П2 = 0 и П3 = 0)") << endl;
+    stream << QString("\n   " + ui->lineEdit_2->text()) + "\n" << endl;
+
+    stream << QString("   5. Использовать указанный диапазон частот для вычисления периодограммы или\n"
+                      "   считать по полному диапазону? (.true. - считать по полному диапазону,\n"
+                      "   .false. - использовать указанный диапазон частот) (обязательно)") << endl;
+
+    if (ui->checkBox_3->isChecked()) {
+        stream << QString("\n   .true.\n") << endl;
+    } else {
+        stream << QString("\n   .false.\n") << endl;
+    }
+
+    stream << QString("   6. Приводить коэффициенты корреляции к несмещённой оценке? .true. - да,\n"
+                      "   .false. - нет) (обязательно)") << endl;
+
+    if (ui->checkBox_4->isChecked()) {
+        stream << QString("\n   .true.\n") << endl;
+    } else {
+        stream << QString("\n   .false.\n") << endl;
+    }
+
+    stream << QString("   7. Множитель дискретизации множителей p (для частот) (обязательно)") << endl;
+    stream << QString("\n   " + ui->lineEdit_3->text()) + "\n" << endl;
+
+    stream << QString("   8. Множитель дискретизации множителей t (для периодов) (обязательно)") << endl;
+    stream << QString("\n   " + ui->lineEdit_4->text()) + "\n" << endl;
+
+    stream << QString("   9. Границы рабочего диапазона частот (обязателен, если П5 != 0)") << endl;
+    stream << QString("\n   " + ui->lineEdit_5->text()) << endl;
+    stream << QString("   " + ui->lineEdit_6->text()) << endl;
 
     file.close();
 }
