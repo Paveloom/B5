@@ -56,7 +56,7 @@
      <rect>
       <x>30</x>
       <y>85</y>
-      <width>291</width>
+      <width>271</width>
       <height>20</height>
      </rect>
     </property>
@@ -69,6 +69,9 @@
     <property name="contextMenuPolicy">
      <enum>Qt::NoContextMenu</enum>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При отмеченном чекбоксе программа будет использовать массив исключений, указанный в коде процедуры F0; при неотмеченном — будет вычислять индексы-исключения программно (может замедлить выполнение).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="text">
      <string>Заполнять массив исключений вручную?</string>
     </property>
@@ -78,7 +81,7 @@
      <rect>
       <x>30</x>
       <y>65</y>
-      <width>291</width>
+      <width>241</width>
       <height>20</height>
      </rect>
     </property>
@@ -87,6 +90,9 @@
     </property>
     <property name="contextMenuPolicy">
      <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При отмеченном чекбоксе программа будет исключать из обработки выпущенные значения временного ряда (значения случайного процесса, приравненные в input к нулю).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Использовать массив исключений?</string>
@@ -110,9 +116,12 @@
      <rect>
       <x>30</x>
       <y>15</y>
-      <width>251</width>
+      <width>101</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Указывается полный размер выборки (число строк в файле input).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Размер выборки</string>
@@ -136,9 +145,12 @@
      <rect>
       <x>30</x>
       <y>110</y>
-      <width>251</width>
+      <width>111</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Число выпущенных значений временного ряда.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Число исключений</string>
@@ -149,7 +161,7 @@
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>291</width>
+      <width>281</width>
       <height>31</height>
      </rect>
     </property>
@@ -162,6 +174,9 @@
     <property name="contextMenuPolicy">
      <enum>Qt::NoContextMenu</enum>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При отмеченном чекбоксе программа будет вычислять периодограмму по полному диапазону частот, при неотмеченном — будет использовать указанный диапазон частот (смотри ниже).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="text">
      <string>Использовать полный диапазон частот для 
 вычисления периодограммы?</string>
@@ -172,7 +187,7 @@
      <rect>
       <x>30</x>
       <y>195</y>
-      <width>291</width>
+      <width>271</width>
       <height>31</height>
      </rect>
     </property>
@@ -208,9 +223,12 @@
      <rect>
       <x>30</x>
       <y>230</y>
-      <width>311</width>
+      <width>251</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для подробностей смотри вычисление p_num в главной программе.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Множитель дискретизации множителей p 
@@ -222,9 +240,12 @@
      <rect>
       <x>30</x>
       <y>293</y>
-      <width>311</width>
+      <width>251</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для подробностей смотри использование t_koef в процедуре F4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Множитель дискретизации множителей t 
@@ -262,7 +283,7 @@
      <rect>
       <x>30</x>
       <y>360</y>
-      <width>251</width>
+      <width>231</width>
       <height>16</height>
      </rect>
     </property>
